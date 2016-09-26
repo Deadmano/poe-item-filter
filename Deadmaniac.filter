@@ -1,4 +1,4 @@
-# -----------------------------------------------------------------------------------------------------------------------------
+﻿# -----------------------------------------------------------------------------------------------------------------------------
 # DEADMANIAC | Deadmano's Customisable Loot Filter
 # Author: Deadmano
 # Steam: http://steamcommunity.com/id/Deadmano
@@ -328,13 +328,6 @@ Hide
     BaseType "Colossal" "Sacred" "Hallowed"
     SetFontSize 28
 
-# Section: XXX | CLEANUP STUBBORN ITEMS
-
-# Items listed are forcefully hidden by their base type due to some filtering glitch where they simply do not filter by their class type.
-Hide
-    BaseType "Quartz Sceptre" "Sekhem" "Lead Sceptre"
-    SetFontSize 24
-
 # Section: XXXX | CLEANUP/FAILSAFE
 
 # Toggle this if you're low on hammers and don't mind using a Blacksmith's Whetstone to improve them for the Cartographer's Chisel vendor recipe.
@@ -389,7 +382,6 @@ Hide # Don't Hide Junk Accessories
     Rarity = Magic
     Class "Amulet" "Belt" "Quiver" "Ring"
     SetFontSize 26
-	
 
 # Hide (or minimise) all junk NORMAL accessories that match the classes specified and aren't covered by any other filters.
 Hide # Don't Hide Junk Accessories
@@ -416,3 +408,4 @@ Show # Show Unfiltered Items
     SetBorderColor 232 78 79 # Unknown Item
     SetFontSize 45
     PlayAlertSound 5 100
+
