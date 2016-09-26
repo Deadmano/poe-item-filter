@@ -1,1 +1,418 @@
+# -----------------------------------------------------------------------------------------------------------------------------
+# DEADMANIAC | Deadmano's Customisable Loot Filter
+# Author: Deadmano
+# Steam: http://steamcommunity.com/id/Deadmano
+# Filter Version: 0.0.4
+# Game Version: 2.4.0 (Atlas of Worlds)
+# -----------------------------------------------------------------------------------------------------------------------------
 
+# Section: 0000 | CONFIG
+
+# Bigger quest items.
+Show
+    Class "Quest Items"
+    SetFontSize 45
+
+# Section: 0020 | CONFIG - CURRENCIES
+
+# Minimise the size of rarely used currencies.
+Show
+    Class "Currency"
+    BaseType "Scroll of Wisdom" "Portal Scroll"
+    SetFontSize 24
+
+# Section: 0100 | EXCEPTIONAL ITEMS
+
+Show
+    BaseType "Mirror of Kalandra"
+    SetTextColor 170 158 130 # Exceptional Item
+    SetBackgroundColor 70 0 123 230 # Exceptional Item
+    SetBorderColor 170 158 130 # Exceptional Item
+    SetFontSize 45
+    PlayAlertSound 7 100
+
+Show
+    Class "Fishing Rod"
+    SetTextColor 170 158 130 # Exceptional Item
+    SetBackgroundColor 70 0 123 230 # Exceptional Item
+    SetBorderColor 170 158 130 # Exceptional Item
+    SetFontSize 45
+
+Show
+    LinkedSockets = 6
+    SetTextColor 170 158 130 # Exceptional Item
+    SetBackgroundColor 70 0 123 230 # Exceptional Item
+    SetBorderColor 170 158 130 # Exceptional Item
+    SetFontSize 45
+
+# Section: 0200 | CURRENCIES - RARE
+
+Show
+    Class "Currency"
+    BaseType "Divine Orb" "Eternal Orb" "Exalted Orb"
+    SetTextColor 170 158 130 # Currency
+    SetBackgroundColor 0 0 0 230 # Currency
+    SetBorderColor 170 158 130 # Currency
+    SetFontSize 44
+    PlayAlertSound 4 100
+
+# Section: 0210 | CURRENCIES - UNCOMMON
+
+Show
+    Class "Currency"
+    BaseType "Blessed Orb" "Chaos Orb" "Chromatic Orb" "Gemcutter's Prism" "Glassblower's Bauble" "Jeweller's Orb" "Orb of Alchemy" "Orb of Fusing" "Orb of Scouring" "Regal Orb" "Vaal Orb"
+    SetFontSize 40
+
+# Section: 0220 | CURRENCIES - COMMON
+
+Show
+    Class "Currency"
+    BaseType "Armourer's Scrap" "Blacksmith's Whetstone" "Orb of Alteration" "Orb of Augmentation" "Orb of Chance" "Orb of Regret" "Orb of Transmutation" "Portal Scroll" "Scroll of Wisdom"
+    SetFontSize 32
+
+# Section: 0300 | VENDOR RECIPES - RARE
+
+# 1x: Divine Orb.
+Show
+    Rarity < Unique
+    LinkedSockets = 6
+    SetTextColor 0 0 0 # Vendor Recipe: Rare
+    SetBackgroundColor 169 169 169 # Vendor Recipe: Rare
+    SetBorderColor 105 105 105 # Vendor Recipe: Rare
+    SetFontSize 44
+
+# 1x: Cartographer's Chisel.
+Show
+    Quality = 20
+    Rarity = Normal
+    Class "Map"
+    SetTextColor 0 0 0 # Vendor Recipe: Rare
+    SetBackgroundColor 169 169 169 # Vendor Recipe: Rare
+    SetBorderColor 105 105 105 # Vendor Recipe: Rare
+    SetFontSize 44
+
+# 1x: Gemcutter's Prism.
+Show
+    Quality = 20
+    Rarity = Normal
+    Class "Gem"
+    SetTextColor 0 0 0 # Vendor Recipe: Rare
+    SetBackgroundColor 169 169 169 # Vendor Recipe: Rare
+    SetBorderColor 105 105 105 # Vendor Recipe: Rare
+    SetFontSize 42
+
+# 1x: Cartographer's Chisel (when sold with ANY map).
+Show
+    Quality = 20
+    Rarity <= Rare
+    Class "One Hand Mace"
+    BaseType "Gavel" "Rock Breaker" "Stone Hammer"
+    SetTextColor 0 0 0 # Vendor Recipe: Rare
+    SetBackgroundColor 169 169 169 # Vendor Recipe: Rare
+    SetBorderColor 105 105 105 # Vendor Recipe: Rare
+    SetFontSize 42
+
+# 7x: Jeweller's Orb.
+Show
+    Rarity < Unique
+    Sockets = 6
+    LinkedSockets < 5
+    SetTextColor 0 0 0 # Vendor Recipe: Rare
+    SetBackgroundColor 169 169 169 # Vendor Recipe: Rare
+    SetBorderColor 105 105 105 # Vendor Recipe: Rare
+    SetFontSize 40
+
+# Section: 0310 | VENDOR RECIPES - UNCOMMON
+
+# 1x: Glassblower's Bauble.
+Show
+    Quality = 20
+    Rarity = Normal
+    Class "Flask"
+    SetTextColor 0 0 0 230 # Vendor Recipe: Uncommon
+    SetBackgroundColor 169 169 169 230 # Vendor Recipe: Uncommon
+    SetBorderColor 105 105 105 # Vendor Recipe: Uncommon
+    SetFontSize 42
+
+# 1x: Chromatic Orb.
+Show
+    LinkedSockets >= 3
+    SocketGroup "RGB"
+    SetTextColor 0 0 0 230 # Vendor Recipe: Uncommon
+    SetBackgroundColor 169 169 169 230 # Vendor Recipe: Uncommon
+    SetBorderColor 105 105 105 # Vendor Recipe: Uncommon
+    SetFontSize 38
+
+# % towards 1x: Glassblower's Bauble (40% total quality).
+Show
+    Quality >= 5
+    Rarity <= Rare
+    Class "Flask"
+    SetTextColor 0 0 0 180 # Vendor Recipe: Common
+    SetBackgroundColor 169 169 169 180 # Vendor Recipe: Common
+    SetBorderColor 105 105 105 # Vendor Recipe: Common
+    SetFontSize 36
+
+# 1x: Armourer's Scrap.
+Show
+    Quality = 20
+    Rarity = Normal
+    Class "Body Armour" "Boots" "Gloves" "Helmet" "Shield"
+    SetTextColor 0 0 0 230 # Vendor Recipe: Uncommon
+    SetBackgroundColor 169 169 169 230 # Vendor Recipe: Uncommon
+    SetBorderColor 105 105 105 # Vendor Recipe: Uncommon
+    SetFontSize 36
+
+# 1x: Blacksmith's Whetstone.
+Show
+    Quality = 20
+    Rarity = Normal
+    Class "Axe" "Bow" "Claw" "Dagger" "Mace" "Stave" "Sword" "Wand"
+    SetTextColor 0 0 0 230 # Vendor Recipe: Uncommon
+    SetBackgroundColor 169 169 169 230 # Vendor Recipe: Uncommon
+    SetBorderColor 105 105 105 # Vendor Recipe: Uncommon
+    SetFontSize 36
+
+# % towards 1x: Armourer's Scrap/Blacksmith's Whetstone (40% total quality).
+Show
+    Quality >= 15
+    Rarity <= Rare
+    Class "Body Armour" "Bow" "Shield" "Two Hand Axe" "Two Hand Mace" "Two Hand Sword"
+    SetTextColor 0 0 0 180 # Vendor Recipe: Common
+    SetBackgroundColor 169 169 169 180 # Vendor Recipe: Common
+    SetBorderColor 105 105 105 # Vendor Recipe: Common
+    SetFontSize 36
+
+# % towards 1x: Armourer's Scrap/Blacksmith's Whetstone (40% total quality). Prioritising 4 slot items.
+Show
+    Quality >= 5
+    Rarity <= Rare
+    Class "Claw" "Dagger" "One Hand Axe" "One Hand Mace" "One Hand Sword" "Wand" "Boots" "Gloves" "Helmet"
+    SetTextColor 0 0 0 180 # Vendor Recipe: Common
+    SetBackgroundColor 169 169 169 180 # Vendor Recipe: Common
+    SetBorderColor 105 105 105 # Vendor Recipe: Common
+    SetFontSize 32
+
+# % towards 1x: Armourer's Scrap (40% total quality). Prioritising 4 slot items.
+Show
+    Quality >= 5
+    Rarity <= Rare
+    BaseType "Spirit Shield" "Buckler" "Spiked Shield"
+    SetTextColor 0 0 0 180 # Vendor Recipe: Common
+    SetBackgroundColor 169 169 169 180 # Vendor Recipe: Common
+    SetBorderColor 105 105 105 # Vendor Recipe: Common
+    SetFontSize 32
+
+# Section: 0400 | FLASKS - TIER 1
+
+Show
+    ItemLevel <= 70
+    Rarity = Unique
+    Class "Life Flask" "Mana Flask"
+    BaseType "Sanctified" "Divine" "Eternal"
+    SetFontSize 44
+
+Show
+    ItemLevel <= 70
+    Rarity = Magic
+    Class "Life Flask" "Mana Flask"
+    BaseType "Sanctified" "Divine" "Eternal"
+    SetFontSize 38
+
+Show
+    ItemLevel <= 70
+    Rarity = Normal
+    Class "Life Flask" "Mana Flask"
+    BaseType "Sanctified" "Divine" "Eternal"
+    SetFontSize 32
+
+# Section: 0410 | FLASKS - TIER 2
+
+Show
+    ItemLevel <= 50
+    Rarity = Unique
+    Class "Life Flask" "Mana Flask"
+    BaseType "Colossal" "Sacred" "Hallowed"
+    SetFontSize 42
+
+Show
+    ItemLevel <= 50
+    Rarity = Magic
+    Class "Life Flask" "Mana Flask"
+    BaseType "Colossal" "Sacred" "Hallowed"
+    SetFontSize 36
+
+Show
+    ItemLevel <= 50
+    Rarity = Normal
+    Class "Life Flask" "Mana Flask"
+    BaseType "Colossal" "Sacred" "Hallowed"
+    SetFontSize 30
+
+# Section: 0420 | FLASKS - TIER 3
+
+Show
+    ItemLevel <= 30
+    Rarity = Unique
+    Class "Life Flask" "Mana Flask"
+    BaseType "Greater" "Grand" "Giant"
+    SetFontSize 40
+
+Show
+    ItemLevel <= 30
+    Rarity = Magic
+    Class "Life Flask" "Mana Flask"
+    BaseType "Greater" "Grand" "Giant"
+    SetFontSize 34
+
+Show
+    ItemLevel <= 30
+    Rarity = Normal
+    Class "Life Flask" "Mana Flask"
+    BaseType "Greater" "Grand" "Giant"
+    SetFontSize 28
+
+# Section: 0430 | FLASKS - TIER 4
+
+Show
+    ItemLevel <= 12
+    Rarity = Unique
+    Class "Life Flask" "Mana Flask"
+    BaseType "Small" "Medium" "Large"
+    SetFontSize 38
+
+Show
+    ItemLevel <= 12
+    Rarity = Magic
+    Class "Life Flask" "Mana Flask"
+    BaseType "Small" "Medium" "Large"
+    SetFontSize 32
+
+Show
+    ItemLevel <= 12
+    Rarity = Normal
+    Class "Life Flask" "Mana Flask"
+    BaseType "Small" "Medium" "Large"
+    SetFontSize 26
+
+# Section: 0499 | FLASKS - FAILSAFE
+
+# Show all other unfiltered UNIQUE flask items.
+Show
+    Rarity = Unique
+    Class "Flask"
+    SetFontSize 44
+
+# Start hiding (Tier 4)  SMALL, MEDIUM and LARGE life and mana flasks from level 12 onwards.
+Hide
+    ItemLevel > 12
+    DropLevel <= 12
+    Rarity < Unique
+    Class "Life Flask" "Mana Flask"
+    BaseType "Small" "Medium" "Large"
+    SetFontSize 24
+
+# Start hiding (Tier 3) GREATER, GRAND and GIANT life and mana flasks from level 30 onwards.
+Hide
+    ItemLevel > 30
+    DropLevel <= 30
+    Class "Life Flask" "Mana Flask"
+    BaseType "Greater" "Grand" "Giant"
+    SetFontSize 26
+
+# Start hiding (Tier 2) COLOSSAL, SACRED and HALLOWED life and mana flasks from level 50 onwards.
+Hide
+    ItemLevel > 50
+    DropLevel <= 50
+    Class "Life Flask" "Mana Flask"
+    BaseType "Colossal" "Sacred" "Hallowed"
+    SetFontSize 28
+
+# Section: XXX | CLEANUP STUBBORN ITEMS
+
+# Items listed are forcefully hidden by their base type due to some filtering glitch where they simply do not filter by their class type.
+Hide
+    BaseType "Quartz Sceptre" "Sekhem" "Lead Sceptre"
+    SetFontSize 24
+
+# Section: XXXX | CLEANUP/FAILSAFE
+
+# Toggle this if you're low on hammers and don't mind using a Blacksmith's Whetstone to improve them for the Cartographer's Chisel vendor recipe.
+Hide # Don't Hide Junk Cartographer Hammers
+    Class "One Hand Mace"
+    BaseType "Gavel" "Rock Breaker" "Stone Hammer"
+
+# Hide (or minimise) all junk RARE weapons that match the classes specified and aren't covered by any other filters.
+Hide # Don't Hide Junk Weapons
+    Rarity = Rare
+    Class "Axe" "Bow" "Claw" "Dagger" "Mace" "Sceptre" "Stave" "Sword" "Wand"
+    SetFontSize 30
+
+# Hide (or minimise) all junk MAGIC weapons that match the classes specified and aren't covered by any other filters.
+Hide # Don't Hide Junk Weapons
+    Rarity = Magic
+    Class "Axe" "Bow" "Claw" "Dagger" "Mace" "Sceptre" "Stave" "Sword" "Wand"
+    SetFontSize 26
+
+# Hide (or minimise) all junk NORMAL weapons that match the classes specified and aren't covered by any other filters.
+Hide # Don't Hide Junk Weapons
+    Rarity = Normal
+    Class "Axe" "Bow" "Claw" "Dagger" "Mace" "Sceptre" "Stave" "Sword" "Wand"
+    SetFontSize 22
+
+# Hide (or minimise) all junk RARE armour that match the classes specified and aren't covered by any other filters.
+Hide # Don't Hide Junk Armour
+    Rarity = Rare
+    Class "Body Armour" "Boots" "Gloves" "Helmet" "Shield"
+    SetFontSize 30
+
+# Hide (or minimise) all junk MAGIC armour that match the classes specified and aren't covered by any other filters.
+Hide # Don't Hide Junk Armour
+    Rarity = Magic
+    Class "Body Armour" "Boots" "Gloves" "Helmet" "Shield"
+    SetFontSize 26
+
+# Hide (or minimise) all junk NORMAL armour that match the classes specified and aren't covered by any other filters.
+Hide # Don't Hide Junk Armour
+    Rarity = Normal
+    Class "Body Armour" "Boots" "Gloves" "Helmet" "Shield"
+    SetFontSize 22
+
+# Hide (or minimise) all junk RARE accessories that match the classes specified and aren't covered by any other filters.
+Hide # Don't Hide Junk Accessories
+    Rarity = Rare
+    Class "Amulet" "Belt" "Quiver" "Ring"
+    SetFontSize 30
+
+# Hide (or minimise) all junk MAGIC accessories that match the classes specified and aren't covered by any other filters.
+Hide # Don't Hide Junk Accessories
+    Rarity = Magic
+    Class "Amulet" "Belt" "Quiver" "Ring"
+    SetFontSize 26
+	
+
+# Hide (or minimise) all junk NORMAL accessories that match the classes specified and aren't covered by any other filters.
+Hide # Don't Hide Junk Accessories
+    Rarity = Normal
+    Class "Amulet" "Belt" "Quiver" "Ring"
+    SetFontSize 22
+
+# Hide (or minimise) all junk MAGIC flasks that aren't covered by any other filters.
+Hide # Don't Hide Junk Flasks
+    Rarity = Magic
+    Class "Flask"
+    SetFontSize 26
+
+# Hide (or minimise) all junk NORMAL flasks that aren't covered by any other filters.
+Hide # Don't Hide Junk Flasks
+    Rarity = Normal
+    Class "Flask"
+    SetFontSize 22
+
+# Show all other items that don't match any of the filters above. This is a failsafe to ensure any new item types added by GGG, and not covered by a filter, are shown.
+Show # Show Unfiltered Items
+    SetTextColor 255 255 255 # Unknown Item
+    SetBackgroundColor 156 0 5 # Unknown Item
+    SetBorderColor 232 78 79 # Unknown Item
+    SetFontSize 45
+    PlayAlertSound 5 100
