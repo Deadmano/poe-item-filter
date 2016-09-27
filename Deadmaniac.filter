@@ -2,8 +2,10 @@
 # DEADMANIAC | Deadmano's Customisable Loot Filter
 # Author: Deadmano
 # Steam: http://steamcommunity.com/id/Deadmano
-# Filter Version: 0.0.4
+# Filter Version: 0.1.0
 # Game Version: 2.4.0 (Atlas of Worlds)
+# 
+# NOTE: If items ever appear with invisible text, weird backgrounds, etc. then restart your game. This is a game bug.
 # -----------------------------------------------------------------------------------------------------------------------------
 
 # Section: 0000 | CONFIG
@@ -15,11 +17,13 @@ Show
 
 # Section: 0020 | CONFIG - CURRENCIES
 
+#Disabled Block Start
 # Minimise the size of rarely used currencies.
-Show
-    Class "Currency"
-    BaseType "Scroll of Wisdom" "Portal Scroll"
-    SetFontSize 24
+#Show
+#    Class "Currency"
+#    BaseType "Scroll of Wisdom" "Portal Scroll"
+#    SetFontSize 24
+#Disabled Block End
 
 # Section: 0100 | EXCEPTIONAL ITEMS
 
@@ -37,6 +41,7 @@ Show
     SetBackgroundColor 70 0 123 230 # Exceptional Item
     SetBorderColor 170 158 130 # Exceptional Item
     SetFontSize 45
+    PlayAlertSound 7 300
 
 Show
     LinkedSockets = 6
@@ -44,31 +49,48 @@ Show
     SetBackgroundColor 70 0 123 230 # Exceptional Item
     SetBorderColor 170 158 130 # Exceptional Item
     SetFontSize 45
+    PlayAlertSound 7 300
 
 # Section: 0200 | CURRENCIES - RARE
 
 Show
     Class "Currency"
     BaseType "Divine Orb" "Eternal Orb" "Exalted Orb"
-    SetTextColor 170 158 130 # Currency
-    SetBackgroundColor 0 0 0 230 # Currency
-    SetBorderColor 170 158 130 # Currency
+    SetTextColor 170 158 130 # Currency: T1
+    SetBackgroundColor 0 0 0 # Currency: T1
+    SetBorderColor 170 158 130 # Currency: T1
     SetFontSize 44
-    PlayAlertSound 4 100
+    PlayAlertSound 3 300
 
 # Section: 0210 | CURRENCIES - UNCOMMON
 
 Show
     Class "Currency"
     BaseType "Blessed Orb" "Chaos Orb" "Chromatic Orb" "Gemcutter's Prism" "Glassblower's Bauble" "Jeweller's Orb" "Orb of Alchemy" "Orb of Fusing" "Orb of Scouring" "Regal Orb" "Vaal Orb"
-    SetFontSize 40
+    SetTextColor 145 133 105 245 # Currency: T2
+    SetBackgroundColor 0 0 0 # Currency: T2
+    SetBorderColor 255 255 255 0 # Currency: T2
+    SetFontSize 38
 
-# Section: 0220 | CURRENCIES - COMMON
+# Section: 0220 | CURRENCIES - TIER 3
 
 Show
     Class "Currency"
-    BaseType "Armourer's Scrap" "Blacksmith's Whetstone" "Orb of Alteration" "Orb of Augmentation" "Orb of Chance" "Orb of Regret" "Orb of Transmutation" "Portal Scroll" "Scroll of Wisdom"
+    BaseType "Armourer's Scrap" "Blacksmith's Whetstone" "Orb of Alteration" "Orb of Augmentation" "Orb of Chance" "Orb of Regret" "Orb of Transmutation"
+    SetTextColor 120 108 80 235 # Currency: T3
+    SetBackgroundColor 0 0 0 # Currency: T3
+    SetBorderColor 255 255 255 0 # Currency: T3
     SetFontSize 32
+
+# Section: 0230 | CURRENCIES - TIER 4
+
+Show
+    Class "Currency"
+    BaseType "Portal Scroll" "Scroll of Wisdom"
+    SetTextColor 120 108 80 235 # Currency: T3
+    SetBackgroundColor 0 0 0 # Currency: T3
+    SetBorderColor 255 255 255 0 # Currency: T3
+    SetFontSize 25
 
 # Section: 0300 | VENDOR RECIPES - RARE
 
@@ -76,30 +98,33 @@ Show
 Show
     Rarity < Unique
     LinkedSockets = 6
-    SetTextColor 0 0 0 # Vendor Recipe: Rare
-    SetBackgroundColor 169 169 169 # Vendor Recipe: Rare
-    SetBorderColor 105 105 105 # Vendor Recipe: Rare
+    SetTextColor 255 255 255 # Vendor Recipe: T1
+    SetBackgroundColor 170 170 170 # Vendor Recipe: T1
+    SetBorderColor 255 255 255 # Vendor Recipe: T1
     SetFontSize 44
+    PlayAlertSound 5 200
 
 # 1x: Cartographer's Chisel.
 Show
     Quality = 20
     Rarity = Normal
     Class "Map"
-    SetTextColor 0 0 0 # Vendor Recipe: Rare
-    SetBackgroundColor 169 169 169 # Vendor Recipe: Rare
-    SetBorderColor 105 105 105 # Vendor Recipe: Rare
+    SetTextColor 255 255 255 # Vendor Recipe: T1
+    SetBackgroundColor 170 170 170 # Vendor Recipe: T1
+    SetBorderColor 255 255 255 # Vendor Recipe: T1
     SetFontSize 44
+    PlayAlertSound 5 200
 
 # 1x: Gemcutter's Prism.
 Show
     Quality = 20
     Rarity = Normal
     Class "Gem"
-    SetTextColor 0 0 0 # Vendor Recipe: Rare
-    SetBackgroundColor 169 169 169 # Vendor Recipe: Rare
-    SetBorderColor 105 105 105 # Vendor Recipe: Rare
+    SetTextColor 255 255 255 # Vendor Recipe: T1
+    SetBackgroundColor 170 170 170 # Vendor Recipe: T1
+    SetBorderColor 255 255 255 # Vendor Recipe: T1
     SetFontSize 42
+    PlayAlertSound 5 200
 
 # 1x: Cartographer's Chisel (when sold with ANY map).
 Show
@@ -107,20 +132,22 @@ Show
     Rarity <= Rare
     Class "One Hand Mace"
     BaseType "Gavel" "Rock Breaker" "Stone Hammer"
-    SetTextColor 0 0 0 # Vendor Recipe: Rare
-    SetBackgroundColor 169 169 169 # Vendor Recipe: Rare
-    SetBorderColor 105 105 105 # Vendor Recipe: Rare
+    SetTextColor 255 255 255 # Vendor Recipe: T1
+    SetBackgroundColor 170 170 170 # Vendor Recipe: T1
+    SetBorderColor 255 255 255 # Vendor Recipe: T1
     SetFontSize 42
+    PlayAlertSound 5 200
 
 # 7x: Jeweller's Orb.
 Show
     Rarity < Unique
     Sockets = 6
     LinkedSockets < 5
-    SetTextColor 0 0 0 # Vendor Recipe: Rare
-    SetBackgroundColor 169 169 169 # Vendor Recipe: Rare
-    SetBorderColor 105 105 105 # Vendor Recipe: Rare
+    SetTextColor 255 255 255 # Vendor Recipe: T1
+    SetBackgroundColor 170 170 170 # Vendor Recipe: T1
+    SetBorderColor 255 255 255 # Vendor Recipe: T1
     SetFontSize 40
+    PlayAlertSound 5 200
 
 # Section: 0310 | VENDOR RECIPES - UNCOMMON
 
@@ -129,38 +156,28 @@ Show
     Quality = 20
     Rarity = Normal
     Class "Flask"
-    SetTextColor 0 0 0 230 # Vendor Recipe: Uncommon
-    SetBackgroundColor 169 169 169 230 # Vendor Recipe: Uncommon
-    SetBorderColor 105 105 105 # Vendor Recipe: Uncommon
+    SetTextColor 255 255 255 # Vendor Recipe: T2
+    SetBackgroundColor 170 170 170 # Vendor Recipe: T2
+    SetBorderColor 255 255 255 0 # Vendor Recipe: T2
     SetFontSize 42
 
 # 1x: Chromatic Orb.
 Show
     LinkedSockets >= 3
     SocketGroup "RGB"
-    SetTextColor 0 0 0 230 # Vendor Recipe: Uncommon
-    SetBackgroundColor 169 169 169 230 # Vendor Recipe: Uncommon
-    SetBorderColor 105 105 105 # Vendor Recipe: Uncommon
+    SetTextColor 255 255 255 # Vendor Recipe: T2
+    SetBackgroundColor 170 170 170 # Vendor Recipe: T2
+    SetBorderColor 255 255 255 0 # Vendor Recipe: T2
     SetFontSize 38
-
-# % towards 1x: Glassblower's Bauble (40% total quality).
-Show
-    Quality >= 5
-    Rarity <= Rare
-    Class "Flask"
-    SetTextColor 0 0 0 180 # Vendor Recipe: Common
-    SetBackgroundColor 169 169 169 180 # Vendor Recipe: Common
-    SetBorderColor 105 105 105 # Vendor Recipe: Common
-    SetFontSize 36
 
 # 1x: Armourer's Scrap.
 Show
     Quality = 20
     Rarity = Normal
     Class "Body Armour" "Boots" "Gloves" "Helmet" "Shield"
-    SetTextColor 0 0 0 230 # Vendor Recipe: Uncommon
-    SetBackgroundColor 169 169 169 230 # Vendor Recipe: Uncommon
-    SetBorderColor 105 105 105 # Vendor Recipe: Uncommon
+    SetTextColor 255 255 255 # Vendor Recipe: T2
+    SetBackgroundColor 170 170 170 # Vendor Recipe: T2
+    SetBorderColor 255 255 255 0 # Vendor Recipe: T2
     SetFontSize 36
 
 # 1x: Blacksmith's Whetstone.
@@ -168,19 +185,45 @@ Show
     Quality = 20
     Rarity = Normal
     Class "Axe" "Bow" "Claw" "Dagger" "Mace" "Stave" "Sword" "Wand"
-    SetTextColor 0 0 0 230 # Vendor Recipe: Uncommon
-    SetBackgroundColor 169 169 169 230 # Vendor Recipe: Uncommon
-    SetBorderColor 105 105 105 # Vendor Recipe: Uncommon
+    SetTextColor 255 255 255 # Vendor Recipe: T2
+    SetBackgroundColor 170 170 170 # Vendor Recipe: T2
+    SetBorderColor 255 255 255 0 # Vendor Recipe: T2
     SetFontSize 36
+
+# Section: 0320 | VENDOR RECIPES - TIER 3
+
+# % towards 1x: Glassblower's Bauble (40% total quality).
+Show
+    Quality >= 10
+    Quality < 20
+    Rarity < Rare
+    Class "Flask"
+    SetTextColor 235 235 235 245 # Vendor Recipe: T3
+    SetBackgroundColor 170 170 170 200 # Vendor Recipe: T3
+    SetBorderColor 255 255 255 0 # Vendor Recipe: T3
+    SetFontSize 25
+
+# Section: 0330 | VENDOR RECIPES - TIER 4
+
+# % towards 1x: Glassblower's Bauble (40% total quality).
+Show
+    Quality >= 5
+    Quality < 10
+    Rarity < Rare
+    Class "Flask"
+    SetTextColor 215 215 215 # Vendor Recipe: T4
+    SetBackgroundColor 150 150 150 170 # Vendor Recipe: T4
+    SetBorderColor 255 255 255 0 # Vendor Recipe: T4
+    SetFontSize 20
 
 # % towards 1x: Armourer's Scrap/Blacksmith's Whetstone (40% total quality).
 Show
     Quality >= 15
     Rarity <= Rare
     Class "Body Armour" "Bow" "Shield" "Two Hand Axe" "Two Hand Mace" "Two Hand Sword"
-    SetTextColor 0 0 0 180 # Vendor Recipe: Common
-    SetBackgroundColor 169 169 169 180 # Vendor Recipe: Common
-    SetBorderColor 105 105 105 # Vendor Recipe: Common
+    SetTextColor 235 235 235 245 # Vendor Recipe: T3
+    SetBackgroundColor 170 170 170 200 # Vendor Recipe: T3
+    SetBorderColor 255 255 255 0 # Vendor Recipe: T3
     SetFontSize 36
 
 # % towards 1x: Armourer's Scrap/Blacksmith's Whetstone (40% total quality). Prioritising 4 slot items.
@@ -188,9 +231,9 @@ Show
     Quality >= 5
     Rarity <= Rare
     Class "Claw" "Dagger" "One Hand Axe" "One Hand Mace" "One Hand Sword" "Wand" "Boots" "Gloves" "Helmet"
-    SetTextColor 0 0 0 180 # Vendor Recipe: Common
-    SetBackgroundColor 169 169 169 180 # Vendor Recipe: Common
-    SetBorderColor 105 105 105 # Vendor Recipe: Common
+    SetTextColor 235 235 235 245 # Vendor Recipe: T3
+    SetBackgroundColor 170 170 170 200 # Vendor Recipe: T3
+    SetBorderColor 255 255 255 0 # Vendor Recipe: T3
     SetFontSize 32
 
 # % towards 1x: Armourer's Scrap (40% total quality). Prioritising 4 slot items.
@@ -198,9 +241,9 @@ Show
     Quality >= 5
     Rarity <= Rare
     BaseType "Spirit Shield" "Buckler" "Spiked Shield"
-    SetTextColor 0 0 0 180 # Vendor Recipe: Common
-    SetBackgroundColor 169 169 169 180 # Vendor Recipe: Common
-    SetBorderColor 105 105 105 # Vendor Recipe: Common
+    SetTextColor 235 235 235 245 # Vendor Recipe: T3
+    SetBackgroundColor 170 170 170 200 # Vendor Recipe: T3
+    SetBorderColor 255 255 255 0 # Vendor Recipe: T3
     SetFontSize 32
 
 # Section: 0400 | FLASKS - TIER 1
